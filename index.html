@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cotizador de Letreros LED</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Cotizador de Letreros LED</h1>
+        
+        <form id="cotizadorForm">
+            <!-- Sección de Acrílico -->
+            <div class="form-section">
+                <h2>Material: Acrílico</h2>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="largoLamina">Largo de lámina completa (cm)</label>
+                        <input type="number" id="largoLamina" value="120" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="anchoLamina">Ancho de lámina completa (cm)</label>
+                        <input type="number" id="anchoLamina" value="180" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="precioLamina">Precio de lámina completa (COP)</label>
+                    <input type="number" id="precioLamina" value="200000" required>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="largoNecesario">Largo necesario (cm)</label>
+                        <input type="number" id="largoNecesario" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="anchoNecesario">Ancho necesario (cm)</label>
+                        <input type="number" id="anchoNecesario" required>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sección de LED -->
+            <div class="form-section">
+                <h2>Material: LED Neon</h2>
+                <div class="form-group">
+                    <label for="metrosLED">Metros de LED necesarios</label>
+                    <input type="number" id="metrosLED" value="0" step="0.1" required>
+                </div>
+                <div class="form-group">
+                    <label for="precioMetroLED">Precio por metro de LED (COP)</label>
+                    <input type="number" id="precioMetroLED" value="9000" required>
+                </div>
+            </div>
+
+            <!-- Sección de Componentes adicionales -->
+            <div class="form-section">
+                <h2>Componentes Adicionales</h2>
+                <div class="form-group">
+                    <label for="cantidadConectores">Cantidad de conectores</label>
+                    <input type="number" id="cantidadConectores" value="0" required>
+                </div>
+                <div class="form-group">
+                    <label for="precioConector">Precio por conector (COP)</label>
+                    <input type="number" id="precioConector" value="4000" required>
+                </div>
+                <div class="form-group">
+                    <label for="cantidadAdaptadores">Cantidad de adaptadores 12V</label>
+                    <input type="number" id="cantidadAdaptadores" value="0" required>
+                </div>
+                <div class="form-group">
+                    <label for="precioAdaptador">Precio por adaptador (COP)</label>
+                    <input type="number" id="precioAdaptador" value="12000" required>
+                </div>
+                <div class="form-group">
+                    <label for="cantidadDuplex">Cantidad de Metros Duplex</label>
+                    <input type="number" id="cantidadDuplex" value="0" required>
+                </div>
+                <div class="form-group">
+                    <label for="precioDuplex">Precio por Metro (COP)</label>
+                    <input type="number" id="precioDuplex" value="3000" required>
+                </div>
+            </div>
+
+            <!-- Sección de dimmer -->
+            <div class="form-section">
+                <h2>Control de luz</h2>
+                <div class="form-group">
+                    <label for="horasTrabajo">Controlador De Luz</label>
+                    <input type="number" id="horasTrabajo" value="0" step="0.5" required>
+                </div>
+                <div class="form-group">
+                    <label for="precioHora">Precio de controlador</label>
+                    <input type="number" id="precioHora" value="8000" required>
+                </div>
+            </div>
+
+            <!-- Sección de Margen de ganancia -->
+            <div class="form-section">
+                <h2>Margen de Ganancia</h2>
+                <div class="form-group">
+                    <label for="margenGanancia">Porcentaje de ganancia (%)</label>
+                    <input type="number" id="margenGanancia" value="40" required>
+                </div>
+            </div>
+
+            <button type="button" onclick="calcularCotizacion()">Calcular Cotización</button>
+        </form>
+
+        <div class="resultado" id="resultado" style="display: none;">
+            <h2>Resumen de Cotización</h2>
+            <div id="detallesCotizacion"></div>
+        </div>
+
+        <div class="nota">
+            <p>Nota: Esta calculadora proporciona una estimación. Los precios finales pueden variar según complejidad, disponibilidad de materiales y otros factores no considerados aquí.</p>
+        </div>
+    </div>
+</body>
+</html>
