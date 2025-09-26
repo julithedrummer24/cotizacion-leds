@@ -41,7 +41,7 @@ function calcularCotizacion() {
     const costoDuplex = cantidadDuplex * precioDuplex;
     const costoManoObra = horasTrabajo * precioHora;
 
-    const costoTotalMateriales = costoAcrilico + costoLED + costoConectores + costoAdaptadores;
+    const costoTotalMateriales = costoAcrilico + costoLED + costoConectores + costoAdaptadores + costoDuplex;
     const costoTotal = costoTotalMateriales + costoManoObra;
 
     const ganancia = costoTotal * (margenGanancia / 100);
