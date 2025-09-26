@@ -39,6 +39,7 @@ function calcularCotizacion() {
     const costoConectores = cantidadConectores * precioConector;
     const costoAdaptadores = cantidadAdaptadores * precioAdaptador;
     const costoDuplex = cantidadDuplex * precioDuplex;
+    //controlador Luz
     const costoManoObra = horasTrabajo * precioHora;
 
     const costoTotalMateriales = costoAcrilico + costoLED + costoConectores + costoAdaptadores + costoDuplex;
